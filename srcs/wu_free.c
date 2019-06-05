@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wu_algo.h                                          :+:      :+:    :+:   */
+/*   wu_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 18:17:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/05 19:02:44 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/06/05 18:55:39 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/06/05 18:58:57 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WU_ALGO_H
-# define WU_ALGO_H
+#include "wu_algo.h"
 
-# include "wu_algo_macroses.h"
-# include "wu_algo_structs.h"
-# include <stdbool.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-bool	sdl_init(Sdl *restrict const sdl,
-				const char *title,
-				const uint16_t w,
-				const uint16_t h);
-
-void	sdl_render_loop(Environment *restrict const env);
-
-void	wu_free(Environment *restrict env);
-
-#endif
+void	wu_free(Environment *restrict env)
+{
+	if (env)
+	{
+		FREE(env->sdl.w, SDL_DestroyWindow);
+		FREE(env, free);
+	}
+}

@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wu_algo.h                                          :+:      :+:    :+:   */
+/*   sdl_render_loop.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 18:17:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/05 19:02:44 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/06/05 19:01:50 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/06/05 19:09:56 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WU_ALGO_H
-# define WU_ALGO_H
+#include "wu_algo.h"
 
-# include "wu_algo_macroses.h"
-# include "wu_algo_structs.h"
-# include <stdbool.h>
-# include <unistd.h>
-# include <stdarg.h>
+void	sdl_render_loop(Environment *restrict const env)
+{
+	bool	quit;
 
-bool	sdl_init(Sdl *restrict const sdl,
-				const char *title,
-				const uint16_t w,
-				const uint16_t h);
-
-void	sdl_render_loop(Environment *restrict const env);
-
-void	wu_free(Environment *restrict env);
-
-#endif
+	quit = false;
+	while (!quit)
+		while (SDL_PollEvent(&env->sdl.e) > 0)
+			if (SDL_QUIT == env->sdl.e.type)
+				quit = true;
+			else if (SDL_KEYDOWN == env->sdl.e.type
+			&& SDLK_ESCAPE == env->sdl.e.key.keysym.sym)
+				quit = true;
+}
