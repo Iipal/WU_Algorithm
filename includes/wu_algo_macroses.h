@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:30:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/05 19:12:04 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/05 19:20:24 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,44 +31,25 @@
 # define IF_MSG(exception, ret, message) {\
 	if ((exception)) {\
 		dprintf(STDERR_FILENO, message);\
-		return (ret);\
-	}\
-}
+		return (ret);} }
 # define IF_VAMSG(exception, ret, message, ...) {\
 	if ((exception)) {\
 		dprintf(STDERR_FILENO, message, __VA_ARGS__);\
-		return (ret);\
-	}\
-}
-# define IF(exception, ret) {\
-	if ((exception)) {\
-		return (ret);\
-	}\
-}
+		return (ret);} }
+# define IF(exception, ret) { if ((exception)) { return (ret);} }
+
 # define IF_NOT_MSG(exception, ret, message) {\
 	if (!(exception)) {\
 		dprintf(STDERR_FILENO, message);\
-		return (ret);\
-	}\
-}
+		return (ret); } }
 # define IF_NOT_VAMSG(exception, ret, message, ...) {\
 	if (!(exception)) {\
 		dprintf(STDERR_FILENO, message, __VA_ARGS__);\
-		return (ret);\
-	}\
-}
-# define IF_NOT(exception, ret) {\
-	if (!(exception)) {\
-		return (ret);\
-	}\
-}
+		return (ret); } }
+# define IF_NOT(exception, ret) { if (!(exception)) { return (ret); } }
 # define IF_NOT_DO(exception, do, ret) {\
-	if (!(exception)) {\
-		do; return (ret);\
-	}\
-}
+	if (!(exception)) { do; return (ret); } }
 
-# define FREE(trash, fn_del) {\
-	if ((trash)) {fn_del((trash));} }
+# define FREE(trash, fn_del) { if ((trash)) {fn_del((trash));} }
 
 #endif
