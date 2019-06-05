@@ -1,0 +1,6 @@
+.vscode/
+.VScode/
+**.o
+wu_algo
+**.DS_Store
+test/
