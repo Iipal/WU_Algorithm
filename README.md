@@ -40,3 +40,9 @@ When you have already installed SDL2 library you can use this simple rules:
 | ---------------------------- | -------------- |
 | Re-random all line positions | <kbd>R</kbd>   |
 | Exit.                        | <kbd>ESC</kbd> |
+
+## Flags:
+
+| Flag            | Description                 | Shortcut | Default value                                                                                                                          | Param type                                                  |
+| --------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| --maxLineLength | Set max random line length. | -mll     | equals to [WIN_X](https://github.com/Iipal/WU_Algorithm/blob/bcbaa30b6ce8457508e0c923e22c800e99c02556/includes/wu_algo_macroses.h#L18) | Unsigned integer. (Min: 100; Max: equals to Default Value;) |
