@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:00:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 10:46:02 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 10:48:19 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ __header_always_inline __v2du
 wu_calc_endpoint(__v2df xy, const double_t gradient, const bool steep,
 	SDL_Surface *restrict const surf)
 {
-	const __v2df	end = {u_round(xy[0]),
-		xy[1] + gradient * (u_round(xy[0]) - xy[0])};
+	const __v2df	end = { u_round(xy[0]),
+		xy[1] + gradient * (u_round(xy[0]) - xy[0]) };
 	const double_t	xgap = u_rfpart(xy[0] + 0.5f);
 	const __v2du	pxl = {end[0], u_ipart(end[1])};
 
