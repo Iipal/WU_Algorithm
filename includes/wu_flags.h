@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:25:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 19:02:51 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 22:12:38 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@
 # define DEF_LINES_COUNTER  10
 
 # define MIN_LC		1
-# define MIN_MLL	100
+# define MIN_MLL	25
 
+# define MAX_LC		1500000
 # define MAX_MLL	WIN_X
-# define MAX_LC		100000
 
 extern void	wu_init_flags_def_values(Flags *restrict const f);
 
