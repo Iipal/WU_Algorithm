@@ -6,15 +6,15 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:16:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 14:06:47 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 16:50:51 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_algo.h"
 #include "wu_flags.h"
 
-static inline bool	add_allocate_lines(Environment *restrict const env)
-{
+__header_always_inline bool
+add_allocate_lines(Environment *restrict const env) {
 	env->line_starts =
 		(__v2df*)malloc(sizeof(__v2df) * env->flags.lines_counter);
 	IF_NOT_VAMSG(env->line_starts, false,
@@ -27,8 +27,7 @@ static inline bool	add_allocate_lines(Environment *restrict const env)
 	return (true);
 }
 
-int		main(int argc, char *argv[])
-{
+int		main(int argc, char *argv[]) {
 	Environment	*env;
 
 	--argc;

@@ -6,14 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 13:28:33 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:33:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 16:49:03 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_flags.h"
 
-bool	u_isalpha_str(const char *const str)
-{
+bool	u_isalpha_str(const char *const str) {
 	size_t	i = ~0UL;
 
 	while (str[++i])
@@ -22,8 +21,7 @@ bool	u_isalpha_str(const char *const str)
 	return (true);
 }
 
-bool	u_isdigits_str(const char *const str)
-{
+bool	u_isdigits_str(const char *const str) {
 	size_t	i = ~0L;
 
 	while (str[++i])
@@ -34,8 +32,7 @@ bool	u_isdigits_str(const char *const str)
 
 bool	u_is_one_of_str(const char *const cmp,
 						const bool cmp_len,
-						size_t n, ...)
-{
+						size_t n, ...) {
 	va_list	ap;
 	char	*temp;
 	bool	is_one_of = false;
@@ -46,8 +43,7 @@ bool	u_is_one_of_str(const char *const cmp,
 		if (true == cmp_len && !strncmp(cmp, temp, strlen(temp))) {
 			is_one_of = true;
 			break ;
-		}
-		else if (false == cmp_len && !strcmp(cmp, temp)) {
+		} else if (false == cmp_len && !strcmp(cmp, temp)) {
 			is_one_of = true;
 			break ;
 		}

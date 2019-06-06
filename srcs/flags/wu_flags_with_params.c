@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:57:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:52:22 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 16:49:25 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include "wu_algo_macroses.h"
 
 inline bool		wu_f_mll(Flags *restrict const f, char** av,
-					const size_t ac, size_t *const av_i)
-{
+					const size_t ac, size_t *const av_i) {
 	size_t	i = ~0UL;
 
 	IF_VAMSG(ac <= ++*av_i, false,
@@ -38,8 +37,7 @@ inline bool		wu_f_mll(Flags *restrict const f, char** av,
 }
 
 inline bool		wu_f_lc(Flags *restrict const f, char** av,
-					const size_t ac, size_t *const av_i)
-{
+					const size_t ac, size_t *const av_i) {
 	size_t	i = ~0UL;
 
 	IF_VAMSG(ac <= ++*av_i, false,

@@ -6,13 +6,12 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 13:49:49 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:50:16 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 16:47:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_flags.h"
 
-inline void	wu_init_flags_def_values(Flags *restrict const f)
-{
+inline void	wu_init_flags_def_values(Flags *restrict const f) {
 	*f = (Flags){DEF_MAX_LINE_LEN, DEF_LINES_COUNTER};
 }
