@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 13:28:33 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 16:49:03 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 18:15:49 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ bool	u_isalpha_str(const char *const str) {
 
 	while (str[++i])
 		if (!isalpha(str[i]))
-			return (false);
-	return (true);
+			return false;
+	return true;
 }
 
 bool	u_isdigits_str(const char *const str) {
-	size_t	i = ~0L;
+	size_t	i = ~0UL;
 
 	while (str[++i])
 		if (!isdigit(str[i]))
-			return (false);
-	return (true);
+			return false;
+	return true;
 }
 
 bool	u_is_one_of_str(const char *const cmp,
@@ -49,5 +49,5 @@ bool	u_is_one_of_str(const char *const cmp,
 		}
 	}
 	va_end(ap);
-	return (is_one_of);
+	return is_one_of;
 }

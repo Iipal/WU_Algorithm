@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:23:56 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 16:51:19 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 18:14:56 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static bool	add_parse_current_flag(Flags *restrict const f,
 	while (MAX_FLAGS > ++i)
 		if (u_is_one_of_str(av[*av_i], false, 2, flags[i], sflags[i])) {
 			is_valid_flag = true;
-			return (fns[i](f, av, ac, av_i));
+			return fns[i](f, av, ac, av_i);
 		}
 	if (!is_valid_flag) {
 		dprintf(STDERR_FILENO,
 			"ERROR: Invalid flag: %s.\n", av[*av_i]);
-		return (false);
+		return false;
 	}
-	return (is_valid_flag);
+	return is_valid_flag;
 }
 
 bool	wu_flags_parser(Flags *restrict const f, char **av, const size_t ac) {
@@ -41,11 +41,11 @@ bool	wu_flags_parser(Flags *restrict const f, char **av, const size_t ac) {
 		&& (('-' == av[i][1] && u_isalpha_str(av[i] + 2))
 		|| u_isalpha_str(av[i] + 1))) {
 			if (!add_parse_current_flag(f, av, ac, &i))
-				return (false);
+				return false;
 		} else {
 			dprintf(STDERR_FILENO,
 				"ERROR: Invalid flag semantics: %s.\n", av[i]);
-			return (false);
+			return false;
 		}
-	return (true);
+	return true;
 }

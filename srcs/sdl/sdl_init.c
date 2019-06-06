@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:20:33 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 16:50:37 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 18:18:22 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ bool	sdl_init(Sdl *restrict const sdl,
 		w, h, SDL_WINDOW_SHOWN), false, "%s\n", SDL_GetError());
 	IF_NOT_VAMSG(sdl->wsurf = SDL_GetWindowSurface(sdl->w),
 		false, "%s\n", SDL_GetError());
-	sdl->pxls = (uint32_t*)sdl->wsurf->pixels;
-	return (true);
+	sdl->pxls = (Uint32*)sdl->wsurf->pixels;
+	return true;
 }

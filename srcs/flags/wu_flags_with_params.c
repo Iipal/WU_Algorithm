@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:57:29 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 16:49:25 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 18:15:13 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ inline bool		wu_f_mll(Flags *restrict const f, char** av,
 	IF_VAMSG(MIN_MLL > f->max_line_lenghts, false,
 		"ERROR: (%s [for: \'%s\']) cannot be less than %d. Min is %d.\n",
 		av[*av_i], av[*av_i - 1], MIN_MLL, MIN_MLL);
-	return (true);
+	return true;
 }
 
 inline bool		wu_f_lc(Flags *restrict const f, char** av,
@@ -56,5 +56,5 @@ inline bool		wu_f_lc(Flags *restrict const f, char** av,
 	IF_VAMSG(MIN_LC > f->lines_counter, false,
 		"ERROR: (%s [for: \'%s\']) cannot be less than %d. Min is %d.\n",
 		av[*av_i], av[*av_i - 1], MIN_LC, MIN_LC);
-	return (true);
+	return true;
 }

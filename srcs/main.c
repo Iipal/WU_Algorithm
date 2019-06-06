@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:16:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 16:50:51 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 18:15:03 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ add_allocate_lines(Environment *restrict const env) {
 	IF_NOT_VAMSG(env->line_ends, false,
 		"Can't allocate %zu bytes of memory for `env->line_ends`"
 		"aka `__v2df*`", sizeof(__v2df) * env->flags.lines_counter);
-	return (true);
+	return true;
 }
 
 int		main(int argc, char *argv[]) {
