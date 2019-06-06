@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:16:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:15:03 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 18:38:43 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ int		main(int argc, char *argv[]) {
 		"Can't allocate %zu bytes of memory for `env` aka `Environment*`",
 		sizeof(Environment));
 	bzero(env, sizeof(Environment));
+	g_bg_clr = CLR_BLACK;
+	g_fg_clr = CLR_WHITE;
 	wu_init_flags_def_values(&env->flags);
 	IF_NOT_DO(wu_flags_parser(&env->flags, argv, argc), wu_free(env), 0);
 	IF_NOT_DO(sdl_init(&env->sdl, WIN_TITLE, WIN_X, WIN_Y), wu_free(env), 0);
 	IF_NOT_DO(add_allocate_lines(env), wu_free(env), 0);
-	wu_randomatic_lines_pos(env->line_starts, env->line_ends,
+	wu_randomatize_lines_pos(env->line_starts, env->line_ends,
 		env->flags.max_line_lenghts, env->flags.lines_counter);
 	sdl_render_loop(env);
 	wu_free(env);

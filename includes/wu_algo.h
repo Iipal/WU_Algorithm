@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:17:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 16:31:28 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 18:30:37 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	sdl_init(Sdl *restrict const sdl,
 				const char *title,
 				const uint16_t w,
 				const uint16_t h);
-void	wu_randomatic_lines_pos(__v2df starts[], __v2df ends[],
+void	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
 				const uint32_t max_line_lenght,
 				const uint32_t max_lines_counter);
 

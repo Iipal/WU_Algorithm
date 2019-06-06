@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:28:45 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 10:36:32 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 19:14:30 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,15 @@
 # define CLR_BLACK (Color){0x0}
 # define CLR_WHITE (Color){0xffffff}
 
-typedef struct	s_clr
-{
+typedef struct	s_rgb {
 	uint8_t	r;
 	uint8_t	g;
 	uint8_t	b;
-}	t_clr;
+}	RGB;
 
-typedef union	u_color
-{
+typedef union	u_color {
 	uint32_t	hex;
-	t_clr		c;
+	RGB		c;
 }	Color;
 
 __header_always_inline Color
@@ -45,9 +43,9 @@ clrs_bright_inc(Color clr1, const Color clr2, const float_t percent) {
 
 	out = clr1;
 	if (.0f < percent)
-		out.c = (t_clr){INRANGE(clr1.c.r + (clr2.c.r * percent)),
+		out.c = (RGB) { INRANGE(clr1.c.r + (clr2.c.r * percent)),
 						INRANGE(clr1.c.g + (clr2.c.g * percent)),
-						INRANGE(clr1.c.b + (clr2.c.b * percent))};
+						INRANGE(clr1.c.b + (clr2.c.b * percent)) };
 	return (out);
 }
 

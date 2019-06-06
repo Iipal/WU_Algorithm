@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:34:15 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:20:10 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 19:17:24 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <stdbool.h>
 # include <SDL2/SDL.h>
 
+Color	g_bg_clr;
+Color	g_fg_clr;
+
 __header_always_inline void
 u_plot(unsigned long long x, unsigned long long y,
 	double_t c, Uint32 *restrict const pxls) {
@@ -26,7 +29,7 @@ u_plot(unsigned long long x, unsigned long long y,
 	if (0.0f <= c)
 		if (x && y && WIN_X > x && WIN_Y > y)
 			pxls[y * WIN_X + x] =
-				clrs_bright_inc(CLR_BLACK, CLR_WHITE, c).hex;
+				clrs_bright_inc(g_bg_clr, g_fg_clr, c).hex;
 }
 
 __header_always_inline double_t

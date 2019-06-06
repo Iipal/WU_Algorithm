@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 13:28:33 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:15:49 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 19:06:36 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,18 @@ bool	u_is_one_of_str(const char *const cmp,
 	}
 	va_end(ap);
 	return is_one_of;
+}
+
+bool	u_ishex_str(const char *str) {
+	const char *const	valid_hex = "0123456789abcdef";
+	size_t				i;
+
+	while (*str && (i = ~0L)) {
+		while (valid_hex[++i])
+			if (tolower(*str) == valid_hex[i])
+				break ;
+		if (tolower(*str++) != valid_hex[i])
+			return false;
+	}
+	return true;
 }

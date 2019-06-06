@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:00:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:25:18 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 19:10:54 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ wu_calc_line(__v2df xy0, __v2df xy1, Uint32 *restrict const pxls) {
 void	wu_algo(Environment *restrict const env) {
 	size_t	i = ~0UL;
 
-	SDL_FillRect(env->sdl.wsurf, NULL, 0x0);
+	SDL_FillRect(env->sdl.wsurf, NULL, g_bg_clr.hex);
 	while (env->flags.lines_counter > ++i)
 		wu_calc_line(env->line_starts[i], env->line_ends[i], env->sdl.pxls);
 	SDL_UpdateWindowSurface(env->sdl.w);

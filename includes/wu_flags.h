@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:25:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:51:53 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 19:02:51 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@
 # include <stdbool.h>
 # include <stdarg.h>
 
-# define MAX_FLAGS  2
+# define MAX_FLAGS  4
 # define F_MLL      "--maxLineLength"
 # define F_LC       "--linesCounter"
+# define F_BGC      "--backgroundColor"
+# define F_FGC      "--foregroundColor"
 
 # define SF_MLL     "-mll"
 # define SF_LC      "-lc"
+# define SF_BGC     "-bgc"
+# define SF_FGC     "-fgc"
 
 # define DEF_MAX_LINE_LEN   WIN_X
 # define DEF_LINES_COUNTER  10
@@ -42,15 +46,22 @@ bool	wu_flags_parser(Flags *restrict const f, char **av, const size_t ac);
 
 typedef bool	(*fnptr_fparse)(Flags *restrict const, char**,
 					const size_t, size_t *const);
-extern bool		wu_f_mll(Flags *const f, char** av,
+extern bool		f_mll(Flags *const f, char** av,
 					const size_t ac, size_t *const av_i);
-extern bool		wu_f_lc(Flags *const f, char** av,
+extern bool		f_lc(Flags *const f, char** av,
+					const size_t ac, size_t *const av_i);
+extern bool		f_bgc(Flags *const f, char** av,
+					const size_t ac, size_t *const av_i);
+extern bool		f_fgc(Flags *const f, char** av,
 					const size_t ac, size_t *const av_i);
 
+// Flags utils\helper funcs:
 bool	u_isalpha_str(const char *const str);
 bool	u_isdigits_str(const char *const str);
 bool	u_is_one_of_str(const char *const cmp,
 						const bool cmp_len,
 						size_t n, ...);
+bool	u_ishex_str(const char *str);
+int32_t	u_atoi_base(const char *str, int8_t base);
 
 #endif

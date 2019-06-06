@@ -6,17 +6,18 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:23:56 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:14:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 19:09:07 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_flags.h"
 
+static const char 			*flags[] = {F_MLL, F_LC, F_BGC, F_FGC};
+static const char 			*sflags[] = {SF_MLL, SF_LC, SF_BGC, SF_FGC};
+static const fnptr_fparse	fns[] = {f_mll, f_lc, f_bgc, f_fgc};
+
 static bool	add_parse_current_flag(Flags *restrict const f,
 	char **av, const size_t ac, size_t *const av_i) {
-	const char			*flags[] = {F_MLL, F_LC};
-	const char			*sflags[] = {SF_MLL, SF_LC};
-	const fnptr_fparse	fns[] = {wu_f_mll, wu_f_lc};
 	bool				is_valid_flag = false;
 	size_t				i = ~0UL;
 
