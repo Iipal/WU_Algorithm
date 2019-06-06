@@ -43,6 +43,7 @@ When you have already installed SDL2 library you can use this simple rules:
 
 ## Flags:
 
-| Flag            | Description                 | Shortcut | Default value                                                                                                                          | Param type                                                  |
-| --------------- | --------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| --maxLineLength | Set max random line length. | -mll     | equals to [WIN_X](https://github.com/Iipal/WU_Algorithm/blob/bcbaa30b6ce8457508e0c923e22c800e99c02556/includes/wu_algo_macroses.h#L18) | Unsigned integer. (Min: 100; Max: equals to Default Value;) |
+| Flag            | Description                                       | Shortcut | Default value                                                                                                                          | Param type                                                  |
+| --------------- | ------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| --maxLineLength | Set max random line length.                       | -mll     | equals to [WIN_X](https://github.com/Iipal/WU_Algorithm/blob/bcbaa30b6ce8457508e0c923e22c800e99c02556/includes/wu_algo_macroses.h#L18) | Unsigned integer. (Min: 100; Max: equals to Default Value;) |
+| --linesCounter  | Set how much lines radnomize, calculate and draw. | -lc      | 10                                                                                                                                     | Unsigned Integer. (Min: 1; Max: 100000)                     |
