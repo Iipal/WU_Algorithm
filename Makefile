@@ -24,8 +24,7 @@ ifeq ($(UNAME_S),Linux)
 
 	PACKAGE_MANAGER := sudo dnf
 	INSTALLED_LIBS_LIST := $(shell rpm -qa)
-	SDL2_NECCESSARY_LIBS := SDL2-devel-2.0.9-3.fc30.x86_64 \
-							SDL2_ttf-devel-2.0.15-2.fc30.x86_64
+	SDL2_NECCESSARY_LIBS := SDL2-devel-2.0.9-3.fc30.x86_64
 endif
 ifeq ($(UNAME_S),Darwin)
 	LIBS := -L ~/.brew/lib -rpath ~/.brew/lib
@@ -33,10 +32,10 @@ ifeq ($(UNAME_S),Darwin)
 
 	PACKAGE_MANAGER := brew
 	INSTALLED_LIBS_LIST := $(shell brew list)
-	SDL2_NECCESSARY_LIBS := sdl2 sdl2_ttf
+	SDL2_NECCESSARY_LIBS := sdl2
 endif
 
-LIBS += -lSDL2 -lSDL2_ttf -lm
+LIBS += -lSDL2 -lm
 
 SDL2_INSTALLED_LIBS := $(filter $(SDL2_NECCESSARY_LIBS), $(INSTALLED_LIBS_LIST))
 SDL2_NOT_INSTALLED_LIBS := $(filter-out $(SDL2_INSTALLED_LIBS),$(SDL2_NECCESSARY_LIBS))
