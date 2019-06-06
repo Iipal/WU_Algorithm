@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wu_keybinds_press.c                                :+:      :+:    :+:   */
+/*   wu_flags_init_def_values.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 11:09:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 14:06:57 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/06/06 13:49:49 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/06/06 13:50:16 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wu_algo.h"
+#include "wu_flags.h"
 
-void	wu_keybinds_press(SDL_Keycode key, Environment *restrict const env)
+inline void	wu_init_flags_def_values(Flags *restrict const f)
 {
-	if (SDLK_r == key)
-		wu_randomatic_lines_pos(env->line_starts, env->line_ends,
-			env->flags.max_line_lenghts, env->flags.lines_counter);
+	*f = (Flags){DEF_MAX_LINE_LEN, DEF_LINES_COUNTER};
 }

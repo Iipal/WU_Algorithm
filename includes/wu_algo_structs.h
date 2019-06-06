@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:27:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:14:22 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 13:54:58 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,15 @@ typedef struct	s_sdl {
 
 typedef struct	s_flags {
 	uint32_t	max_line_lenghts;
+	uint32_t	lines_counter;
 } Flags;
 
 typedef struct	s_environment {
 	Sdl		sdl;
 	Time	fps;
 	Flags	flags;
-	__v2df	line_starts[MAX_LINES];
-	__v2df	line_ends[MAX_LINES];
+	__v2df	*line_starts;
+	__v2df	*line_ends;
 } Environment;
 
 #endif

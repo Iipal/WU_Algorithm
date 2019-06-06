@@ -6,19 +6,20 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:16:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:17:34 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 14:06:34 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_algo.h"
 
 void	wu_randomatic_lines_pos(__v2df starts[], __v2df ends[],
-								const uint32_t max_line_lenght)
+								const uint32_t max_line_lenght,
+								const uint32_t max_lines_counter)
 {
 	size_t	i;
 
 	i = ~0UL;
-	while (MAX_LINES > ++i)
+	while (max_lines_counter > ++i)
 	{
 		starts[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};
 		ends[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};

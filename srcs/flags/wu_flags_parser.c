@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:23:56 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:29:41 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 14:00:40 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static bool	add_parse_current_flag(Flags *restrict const f,
 	char **av, const size_t ac, size_t *const av_i)
 {
-	const char			*flags[] = {F_MLL};
-	const char			*sflags[] = {SF_MLL};
-	const fnptr_fparse	fns[] = {wu_f_mll};
+	const char			*flags[] = {F_MLL, F_LC};
+	const char			*sflags[] = {SF_MLL, SF_LC};
+	const fnptr_fparse	fns[] = {wu_f_mll, wu_f_lc};
 	bool		is_valid_flag = false;
 	size_t		i = ~0UL;
 
