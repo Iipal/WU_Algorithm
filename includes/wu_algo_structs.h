@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:27:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 11:04:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 11:05:50 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WU_ALGO_STRUCTS_H
 # define WU_ALGO_STRUCTS_H
 
-# define MAX_LINES 10
+# define MAX_LINES 100
 
 # include <SDL2/SDL.h>
 

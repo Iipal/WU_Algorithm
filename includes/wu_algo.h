@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:17:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 10:36:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 11:10:32 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,20 @@
 # include <stdarg.h>
 # include <fcntl.h>
 
+size_t	u_rand(size_t limit);
+
 bool	sdl_init(Sdl *restrict const sdl,
 				const char *title,
 				const uint16_t w,
 				const uint16_t h);
-void	wu_init_lines_pos(__v2df starts[], __v2df ends[]);
+void	wu_randomatic_lines_pos(__v2df starts[], __v2df ends[]);
 
 void	sdl_render_loop(Environment *restrict const env);
+void	wu_keybinds_press(SDL_Keycode key, Environment *restrict const env);
 
 void	wu_algo(Environment *restrict const env);
 
 void	wu_fps(Time *restrict const fps);
-
-size_t	u_rand(size_t limit);
 
 void	wu_free(Environment *restrict env);
 
