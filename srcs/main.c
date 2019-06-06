@@ -6,14 +6,14 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:16:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:38:43 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 22:07:52 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_algo.h"
 #include "wu_flags.h"
 
-__header_always_inline bool
+__wu_always_inline bool
 add_allocate_lines(Environment *restrict const env) {
 	env->line_starts =
 		(__v2df*)malloc(sizeof(__v2df) * env->flags.lines_counter);
