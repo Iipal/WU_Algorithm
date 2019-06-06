@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 11:09:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 11:11:04 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 13:15:06 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	wu_keybinds_press(SDL_Keycode key, Environment *restrict const env)
 {
 	if (SDLK_r == key)
-		wu_randomatic_lines_pos(env->line_starts, env->line_ends);
+		wu_randomatic_lines_pos(env->line_starts, env->line_ends,
+								env->flags.max_line_lenghts);
 }

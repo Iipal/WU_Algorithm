@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:00:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 10:48:19 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 12:06:21 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ wu_calc_endpoint(__v2df xy, const double_t gradient, const bool steep,
 void	wu_draw_line(__v2df xy0, __v2df xy1, SDL_Surface *restrict const surf)
 {
 	const bool	steep = fabs(xy1[1] - xy0[1]) > fabs(xy1[0] - xy0[0]);
-	__v2df		d;
 	double_t	gradient;
 
 	if (steep)
@@ -50,10 +49,12 @@ void	wu_draw_line(__v2df xy0, __v2df xy1, SDL_Surface *restrict const surf)
 		SWAP(xy0[0], xy1[0]);
 		SWAP(xy0[1], xy1[1]);
 	}
-	d = (__v2df){xy1[0] - xy0[0], xy1[1] - xy0[1]};
-	gradient = d[1] / d[0];
-	if (0.0f == d[0])
-		gradient = 1.0;
+	{
+		const __v2df	d = {xy1[0] - xy0[0], xy1[1] - xy0[1]};
+		gradient = d[1] / d[0];
+		if (0.0f == d[0])
+			gradient = 1.0;
+	}
 
 	// handle first endpoint
 	const __v2du	pxl1 = wu_calc_endpoint(xy0, gradient, steep, surf);
