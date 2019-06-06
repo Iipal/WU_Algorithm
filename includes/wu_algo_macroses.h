@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:30:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 13:18:30 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 22:05:56 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,16 @@
 #  endif
 # endif
 
-# define FPS_FONT "resources/04B_03__.TTF"
+# include <sys/cdefs.h>
+# ifndef __wu_always_inline
+#  if defined __header_always_inline
+#   define __wu_always_inline __header_always_inline
+#  elif defined __extern_always_inline
+#   define __wu_always_inline __extern_always_inline
+#  else
+#   define __wu_always_inline
+#  endif
+# endif
 
 # define IF_MSG(exception, ret, message) {\
 	if ((exception)) {\
