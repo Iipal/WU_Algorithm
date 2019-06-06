@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   wu_init_lines_pos.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 18:16:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 09:19:40 by tmaluh           ###   ########.fr       */
+/*   Created: 2019/06/06 09:16:26 by tmaluh            #+#    #+#             */
+/*   Updated: 2019/06/06 09:44:37 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_algo.h"
 
-int		main(void)
+void	wu_init_lines_pos(__v2df starts[], __v2df ends[])
 {
-	Environment	*env;
+	size_t	i;
 
-	IF_NOT_VAMSG(env = (Environment*)malloc(sizeof(Environment)), 0,
-		"Can't allocate %zu bytes memory for `env` aka `Environment*`",
-		sizeof(Environment));
-	IF_NOT_DO(sdl_init(&env->sdl, WIN_TITLE, WIN_X, WIN_Y), wu_free(env), 0);
-	wu_init_lines_pos(env->line_starts, env->line_ends);
-	sdl_render_loop(env);
+	i = ~0UL;
+	while (MAX_LINES > ++i)
+	{
+		starts[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};
+		ends[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};
+		while (ends[i][0] == starts[i][0]
+			|| ends[i][1] == starts[i][1])
+			ends[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};
+	}
 }
