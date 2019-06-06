@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:30:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 10:23:45 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 10:29:58 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@
 # endif
 
 # define FPS_FONT "resources/04B_03__.TTF"
-
-# define CLR_BLACK (Color){0x0}
-# define CLR_WHITE (Color){0xffffff}
 
 # define IF_MSG(exception, ret, message) {\
 	if ((exception)) {\

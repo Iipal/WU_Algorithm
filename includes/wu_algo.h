@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:17:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 09:44:46 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 10:36:56 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "wu_algo_macroses.h"
 # include "wu_algo_structs.h"
+# include "wu_algo_colors.h"
+# include "wu_algo_utils.h"
+
 # include <stdbool.h>
 # include <unistd.h>
 # include <stdarg.h>
