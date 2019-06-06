@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 19:01:50 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/05 20:06:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 09:23:00 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	sdl_render_loop(Environment *restrict const env)
 			else if (SDL_KEYDOWN == env->sdl.e.type
 			&& SDLK_ESCAPE == env->sdl.e.key.keysym.sym)
 				quit = true;
+		wu_algo(env);
 		wu_fps(&env->fps);
 	}
 }
