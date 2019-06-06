@@ -33,3 +33,10 @@ When you have already installed SDL2 library you can use this simple rules:
 - **make re**: It's rules - **make fclean** & **make** in one.
 - **make pre**: It's rules - **make del** & **make** in one.
 - **make debug**: Re-compile ./wu_algo without optimization flags but with `-g3` for debug.
+
+## Keybinds:
+
+| Description                  | Key            |
+| ---------------------------- | -------------- |
+| Re-random all line positions | <kbd>R</kbd>   |
+| Exit.                        | <kbd>ESC</kbd> |
