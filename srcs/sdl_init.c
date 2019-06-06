@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:20:33 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/05 19:12:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 11:04:05 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ bool	sdl_init(Sdl *restrict const sdl,
 				const uint16_t h)
 {
 	IF_VAMSG(0 > SDL_GetError(), false, "%s\n", SDL_GetError());
-	IF_VAMSG(0 > TTF_Init(), false, "%s\n", SDL_GetError());
 	IF_NOT_VAMSG(sdl->w = SDL_CreateWindow(title,
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		w, h, SDL_WINDOW_SHOWN), false, "%s\n", SDL_GetError());
 	IF_NOT_VAMSG(sdl->wsurf = SDL_GetWindowSurface(sdl->w),
 		false, "%s\n", SDL_GetError());
 	sdl->pxls = (uint32_t*)sdl->wsurf->pixels;
-	IF_NOT_VAMSG(sdl->font = TTF_OpenFont(FPS_FONT, 20),
-		false, "%s\n", TTF_GetError());
 	return (true);
 }

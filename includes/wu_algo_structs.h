@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:27:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 09:43:54 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/06 11:04:15 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # define MAX_LINES 10
 
 # include <SDL2/SDL.h>
-# include <SDL2/SDL_ttf.h>
 
 typedef struct	s_time {
 	float_t	old;
@@ -31,7 +30,6 @@ typedef struct	s_sdl {
 	SDL_Surface	*wsurf;
 	uint32_t	*pxls;
 	SDL_Event	e;
-	TTF_Font	*font;
 }				Sdl;
 
 typedef struct	s_environment {
