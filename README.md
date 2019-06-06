@@ -36,7 +36,7 @@ When you have already installed SDL2 library you can use this simple rules:
 
 ## Keybinds:
 
-| Description                  | Key            |
-| ---------------------------- | -------------- |
-| Re-random all line positions | <kbd>R</kbd>   |
-| Exit.                        | <kbd>ESC</kbd> |
+| Description                     | Key            |
+| ------------------------------- | -------------- |
+| Re-randomize all line positions | <kbd>R</kbd>   |
+| Exit.                           | <kbd>ESC</kbd> |
