@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/05 18:01:30 by tmaluh            #+#    #+#              #
-#    Updated: 2019/06/05 18:16:00 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/06/07 23:58:50 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SDL2_NOT_INSTALLED_LIBS := $(filter-out $(SDL2_INSTALLED_LIBS),$(SDL2_NECCESSARY
 
 CC := gcc -march=native -mtune=native -Ofast -flto -pipe
 CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG
-CFLAGS := -Wall -Wextra -Werror -Wunused
+CFLAGS := -Wall -Wextra -Werror -Wunused -Wpedantic
 IFLAGS := -I $(CURDIR)/includes/
 
 SRCS := $(abspath $(wildcard srcs/*.c srcs/*/*.c srcs/*/*/*.c))
