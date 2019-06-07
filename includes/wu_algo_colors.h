@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 10:28:45 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 22:56:26 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 09:52:06 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ typedef union	u_color {
 }	Color;
 
 Color	g_bg_clr;
+bool	g_is_bgc;
 Color	g_fg_clr;
+bool	g_is_fgc;
 
 __wu_always_inline Color
 clrs_bright_inc(Color clr1, const Color clr2, const float_t percent) {

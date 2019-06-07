@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:27:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:13:01 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 09:45:14 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define MAX_LINES 10
 
+# include <stdbool.h>
 # include <SDL2/SDL.h>
 
 typedef struct	s_time {
@@ -33,6 +34,8 @@ typedef struct	s_sdl {
 typedef struct	s_flags {
 	uint32_t	max_line_lenghts;
 	uint32_t	lines_counter;
+	bool		is_mll;
+	bool		is_lc;
 } Flags;
 
 typedef struct	s_environment {

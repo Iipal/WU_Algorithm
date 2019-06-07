@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wu_randomatic_lines_pos.c                          :+:      :+:    :+:   */
+/*   wu_randomatize_lines_pos.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:16:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:30:25 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 09:58:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
 	size_t	i = ~0UL;
 
 	while (max_lines_counter > ++i) {
-		starts[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};
-		ends[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};
+		starts[i]   = (__v2df){ u_rand(WIN_X), u_rand(WIN_Y) };
+		ends[i]     = (__v2df){ u_rand(WIN_X), u_rand(WIN_Y) };
 		while (u_line_len(starts[i], ends[i]) > max_line_lenght
 		&& (starts[i][0] != ends[i][0] || starts[i][1] != ends[i][1]))
-			ends[i] = (__v2df){u_rand(WIN_X), u_rand(WIN_Y)};
+			ends[i] = (__v2df){ u_rand(WIN_X), u_rand(WIN_Y) };
 	}
 }

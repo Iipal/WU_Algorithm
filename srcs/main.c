@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:16:19 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 22:07:52 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 09:52:32 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ add_allocate_lines(Environment *restrict const env) {
 	return true;
 }
 
+__wu_always_inline void
+add_set_default_global_variables(void) {
+	g_bg_clr = CLR_BLACK;
+	g_fg_clr = CLR_WHITE;
+	g_is_bgc = false;
+	g_is_fgc = false;
+}
+
 int		main(int argc, char *argv[]) {
 	Environment	*env;
 
@@ -36,8 +44,7 @@ int		main(int argc, char *argv[]) {
 		"Can't allocate %zu bytes of memory for `env` aka `Environment*`",
 		sizeof(Environment));
 	bzero(env, sizeof(Environment));
-	g_bg_clr = CLR_BLACK;
-	g_fg_clr = CLR_WHITE;
+	add_set_default_global_variables();
 	wu_init_flags_def_values(&env->flags);
 	IF_NOT_DO(wu_flags_parser(&env->flags, argv, argc), wu_free(env), 0);
 	IF_NOT_DO(sdl_init(&env->sdl, WIN_TITLE, WIN_X, WIN_Y), wu_free(env), 0);
