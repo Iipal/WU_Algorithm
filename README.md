@@ -6,7 +6,6 @@ Testing Xiaolin Wu's line algorithm on C using SDL2.
 ![screenshot](https://github.com/Iipal/WU_Algorithm/blob/master/screenshot.png)
 
 Randomized start and end lines positions on each ./wu_algo startup. If you wants to change randomatic lines counter - change this define: [MAX_LINES](https://github.com/Iipal/WU_Algorithm/blob/ab396293a42375948b3b7655b0100b47e00d87ab/includes/wu_algo_structs.h#L16) and type `make re` for re-compile all project and for correct work with new constant value.
-
 ## Requirements pre-installations:
 
 __Fedora:__
@@ -49,3 +48,9 @@ When you have already installed SDL2 library you can use this simple rules:
 | --linesCounter    | Set how much lines radnomize, calculate and draw. | -lc      | 10                                                                                                                                     | Unsigned Integer. (Min: 1; Max: 1500000)                   |
 | --foregroundColor | Change foreground color. (lines)                  | -fgc     | 0xffffff                                                                                                                               | HEX string, starts with '0x'.                              |
 | --backgroundColor | Change background color.                          | -bgc     | 0x0                                                                                                                                    | HEX string, starts with '0x'.                              |
+
+Example:
+```bash
+$> ./wu_algo -lc 1000 -bgc 0xaa00ff -fgc 0x1ffff
+```
+![screenshot2](https://github.com/Iipal/WU_Algorithm/blob/master/screenshot2.png)
