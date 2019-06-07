@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:30:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 22:05:56 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 23:42:34 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@
 # ifdef __APPLE__
 #  define WIN_X 2000
 #  define WIN_Y 1000
+# elif defined __linux__
+#  define WIN_X 1000
+#  define WIN_Y 500
 # else
-#  ifdef __linux__
-#   define WIN_X 1000
-#   define WIN_Y 500
-#  else
-#   error "Unsupported OS. Try to compile this on MacOS or Linux."
-#  endif
+#  warning "Unsupported OS. Try to compile this on MacOS or Linux."
+#  define WIN_X 200
+#  define WIN_Y 100
 # endif
 
 # include <sys/cdefs.h>
 # ifndef __wu_always_inline
 #  if defined __header_always_inline
 #   define __wu_always_inline __header_always_inline
-#  elif defined __extern_always_inline
-#   define __wu_always_inline __extern_always_inline
+#  elif defined __always_inline
+#   define __wu_always_inline __always_inline
 #  else
 #   define __wu_always_inline
 #  endif
