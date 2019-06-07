@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:17:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 10:13:27 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 14:55:35 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <fcntl.h>
-
-size_t	u_rand(size_t limit);
 
 bool	sdl_init(Sdl *restrict const sdl,
 				const char *title,

@@ -6,11 +6,24 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:16:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 10:12:15 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 14:55:37 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_algo.h"
+
+__wu_always_inline size_t
+u_rand(size_t limit) {
+	size_t			ponies;
+	const int32_t	fd = open("/dev/urandom", O_RDONLY);
+
+	if (0 < fd) {
+		read(fd, &ponies, sizeof(size_t));
+		close(fd);
+		return ponies % limit;
+	}
+	return 0UL;
+}
 
 bool	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
 								const uint32_t max_line_lenght,
