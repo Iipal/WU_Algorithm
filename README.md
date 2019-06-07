@@ -5,7 +5,7 @@ Testing Xiaolin Wu's line algorithm on C using SDL2.
 
 ![screenshot](https://github.com/Iipal/WU_Algorithm/blob/master/screenshot.png)
 
-Randomized start and end lines positions on each ./wu_algo startup. If you wants to change randomatic lines counter - use flag `--linesCounter`(described below).
+Randomized start and end lines positions on each ./wu_algo startup. If you wants to change randomatic lines counter - use flag `--linesCounter`(described below), default is: 10.
 
 ## Requirements pre-installations:
 
