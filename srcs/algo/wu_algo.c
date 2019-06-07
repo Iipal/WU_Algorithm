@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:00:31 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 22:52:53 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 10:11:12 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,5 @@ void	wu_algo(Environment *restrict const env) {
 	while (env->flags.lines_counter > ++i)
 		wu_calc_line(env->line_starts[i], env->line_ends[i], env->sdl.pxls);
 	SDL_UpdateWindowSurface(env->sdl.w);
+	env->is_re_draw = false;
 }

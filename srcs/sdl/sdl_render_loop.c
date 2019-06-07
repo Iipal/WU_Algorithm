@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 19:01:50 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 17:49:58 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 10:16:30 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sdl_render_loop(Environment *restrict const env) {
 				else
 					wu_keybinds_press(env->sdl.e.key.keysym.sym, env);
 			}
-		wu_algo(env);
-		wu_fps(&env->fps);
+		if (env->is_re_draw)
+			wu_algo(env);
 	}
 }

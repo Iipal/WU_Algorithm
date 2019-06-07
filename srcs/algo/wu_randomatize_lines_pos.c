@@ -6,13 +6,13 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:16:26 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 09:58:12 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 10:12:15 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wu_algo.h"
 
-void	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
+bool	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
 								const uint32_t max_line_lenght,
 								const uint32_t max_lines_counter) {
 	size_t	i = ~0UL;
@@ -24,4 +24,5 @@ void	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
 		&& (starts[i][0] != ends[i][0] || starts[i][1] != ends[i][1]))
 			ends[i] = (__v2df){ u_rand(WIN_X), u_rand(WIN_Y) };
 	}
+	return true;
 }

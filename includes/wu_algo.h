@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:17:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/06 18:30:37 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 10:13:27 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	sdl_init(Sdl *restrict const sdl,
 				const char *title,
 				const uint16_t w,
 				const uint16_t h);
-void	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
+bool	wu_randomatize_lines_pos(__v2df starts[], __v2df ends[],
 				const uint32_t max_line_lenght,
 				const uint32_t max_lines_counter);
 
@@ -37,8 +37,6 @@ void	sdl_render_loop(Environment *restrict const env);
 void	wu_keybinds_press(SDL_Keycode key, Environment *restrict const env);
 
 void	wu_algo(Environment *restrict const env);
-
-void	wu_fps(Time *restrict const fps);
 
 void	wu_free(Environment *restrict env);
 

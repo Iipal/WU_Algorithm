@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:27:41 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 09:45:14 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/07 10:10:54 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
 
 # include <stdbool.h>
 # include <SDL2/SDL.h>
-
-typedef struct	s_time {
-	float_t	old;
-	float_t	current;
-	float_t	res;
-} Time;
 
 typedef struct	s_sdl {
 	SDL_Window	*w;
@@ -40,10 +34,10 @@ typedef struct	s_flags {
 
 typedef struct	s_environment {
 	Sdl		sdl;
-	Time	fps;
 	Flags	flags;
 	__v2df	*line_starts;
 	__v2df	*line_ends;
+	bool	is_re_draw;
 } Environment;
 
 #endif
