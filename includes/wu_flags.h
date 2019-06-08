@@ -6,7 +6,7 @@
 /*   By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:25:12 by tmaluh            #+#    #+#             */
-/*   Updated: 2019/06/07 09:57:05 by tmaluh           ###   ########.fr       */
+/*   Updated: 2019/06/08 13:24:18 by tmaluh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@
 # include <stdbool.h>
 # include <stdarg.h>
 
-# define MAX_FLAGS  4
+# define MAX_FLAGS  5
 # define F_MLL      "--maxLineLength"
 # define F_LC       "--linesCounter"
 # define F_BGC      "--backgroundColor"
 # define F_FGC      "--foregroundColor"
+# define F_HELP     "--help"
 
 # define SF_MLL     "-mll"
 # define SF_LC      "-lc"
 # define SF_BGC     "-bgc"
 # define SF_FGC     "-fgc"
+# define SF_HELP    "-h"
 
 # define DEF_MAX_LINE_LEN   WIN_X
 # define DEF_LINES_COUNTER  10
@@ -46,13 +48,15 @@ bool	wu_flags_parser(Flags *restrict const f, char **av, const size_t ac);
 
 typedef bool	(*fnptr_fparse)(Flags *restrict const, char**,
 					const size_t, size_t *const);
-extern bool		f_mll(Flags *const f, char** av,
+extern bool		f_help(Flags *restrict const f, char **av,
 					const size_t ac, size_t *const av_i);
-extern bool		f_lc(Flags *const f, char** av,
+extern bool		f_mll(Flags *restrict const f, char** av,
 					const size_t ac, size_t *const av_i);
-extern bool		f_bgc(Flags *const f, char** av,
+extern bool		f_lc(Flags *restrict const f, char** av,
 					const size_t ac, size_t *const av_i);
-extern bool		f_fgc(Flags *const f, char** av,
+extern bool		f_bgc(Flags *restrict const f, char** av,
+					const size_t ac, size_t *const av_i);
+extern bool		f_fgc(Flags *restrict const f, char** av,
 					const size_t ac, size_t *const av_i);
 
 // Flags utils\helper funcs:
