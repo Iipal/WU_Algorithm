@@ -6,7 +6,7 @@
 #    By: tmaluh <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/05 18:01:30 by tmaluh            #+#    #+#              #
-#    Updated: 2019/06/09 04:48:48 by tmaluh           ###   ########.fr        #
+#    Updated: 2019/06/21 22:49:51 by tmaluh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIBS += -lSDL2 -lm
 
 CC := gcc -march=native -mtune=native -Ofast -flto -pipe
 CC_DEBUG := gcc -march=native -mtune=native -g3 -D DEBUG
-CFLAGS := -Wall -Wextra -Werror -Wunused -Wpedantic
+CFLAGS := -Wall -Wextra -Werror -Wunused
 IFLAGS := -I $(CURDIR)/includes/
 
 SRCS := $(abspath $(wildcard srcs/*.c srcs/*/*.c srcs/*/*/*.c))
